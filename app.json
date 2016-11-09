@@ -6,6 +6,6 @@
     "sample",
     "example"
   ],
-  "image": "heroku/go:1.7",
+  "image": "heroku/go:1.6",
   "mount_dir": "src/github.com/bluefoxcode/goplay"
 }
