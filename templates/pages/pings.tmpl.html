@@ -1,0 +1,36 @@
+{{define "pages/pings.tmpl.html"}}
+    <html>
+        {{template "common/head.tmpl.html"}}
+        <body>
+            <!-- Top -->
+            {{template "common/header.tmpl.html"}}
+            {{template "common/sidenav.tmpl.html"}}
+
+            <!-- Main content: shift it to the right by 270 pixels when the sidenav is visible -->
+            <div class="w3-main w3-container" style="margin-left:270px;margin-top:117px;">
+                {{template "modules/pings.tmpl.html"}}
+
+                <div class="w3-container">
+                    <p>The table below contains the IP and timestamp for the last 10 visits to this page.  The top entry should be your IP address.</p>
+                </div>
+                <table class="w3-table-all w3-hoverable w3-centered">
+                    <thead>
+                        <tr class="w3-teal">
+                            <th>IP</th>
+                            <th>Visited</th>
+                        </tr>
+                    </thead>
+                    {{range $n,$ping := .pings}}
+                        <tr><td>{{$ping.Ip}}</td><td>{{$ping.Visited}}</td></tr>
+                    {{end}}
+                </table>
+
+
+                {{template "common/footer.tmpl.html"}}
+            <!-- END MAIN -->
+            </div>
+
+            {{template "common/nav-script.tmpl.html"}}
+        </body>
+    </html>
+{{ end }}

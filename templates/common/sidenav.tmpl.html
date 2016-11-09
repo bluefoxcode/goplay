@@ -1,3 +1,4 @@
+{{define "common/sidenav.tmpl.html"}}
 <!-- Sidenav -->
 <nav class="w3-sidenav w3-collapse w3-white w3-animate-left" style="z-index:3;width:270px" id="mySidenav">
     <div class="w3-clear"></div>
@@ -7,9 +8,12 @@
             <h3>Demos</h3>
         </div>
         <a href="/">Main App</a>
+        <a href="/pings">Pings</a>
+
     </div>
 </nav>
 
 <!-- Overlay effect when opening sidenav on small screens -->
 <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay">
 </div>
+{{end}}

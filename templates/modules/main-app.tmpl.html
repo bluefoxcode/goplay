@@ -1,13 +1,15 @@
-<div class="w3-container w3-section w3-padding-bottom w3-card-4 w3-light-grey">
+{{define "modules/main-app.tmpl.html"}}
+<div class="w3-container w3-section w3-padding-bottom w3-card-4 w3-light-grey modules main-app">
     <a href="/">
         <div class="w3-container w3-padding-large">
             <h1 class="w3-jumbo">Main App</h1>
             <p class="w3-medium">This is the main application for showing my goplay demos.</p>
             <h2>Features:</h2>
             <ul class="w3-leftbar w3-border-teal features">
-                <li><i class="fa fa-hand-o-right"></i> gin-gonic/gin for routing and templating.</li>
-                <li><i class="fa fa-hand-o-right"></i> kardianos/govendor for package management.</li>
+                <li class='w3-margin'><i class="fa fa-hand-o-right"></i> <strong>gin-gonic/gin</strong> for routing and templating.</li>
+                <li class='w3-margin'><i class="fa fa-hand-o-right"></i> <strong>kardianos/govendor</strong> for package management.</li>
             </ul>
         </div>
     </a>
 </div>
+{{end}}

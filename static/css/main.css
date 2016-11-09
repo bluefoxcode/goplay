@@ -10,3 +10,5 @@ a {text-decoration:none;}
 .features {
     list-style:none;
 }
+
+.features .w3-margin { margin:8px 0;}

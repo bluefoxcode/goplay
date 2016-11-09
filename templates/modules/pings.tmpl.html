@@ -1,0 +1,16 @@
+{{define "modules/pings.tmpl.html"}}
+    <div class="w3-container w3-section w3-padding-bottom w3-card-4 w3-light-grey modules pings">
+        <a href="/pings">
+            <div class="w3-container w3-padding-large">
+                <h1 class="w3-jumbo">Pings</h1>
+                <p class="w3-medium">This module displays working a database to input/retrieve information to display.  It also makes use of the net package to split your request and identify your IP.</p>
+                <h2>Features:</h2>
+                <ul class="w3-leftbar w3-border-teal features">
+                    <li class='w3-margin'><i class="fa fa-hand-o-right"></i> All the features from the main-app.</li>
+                    <li class='w3-margin'><i class="fa fa-hand-o-right"></i> <strong>github.com/lib/pq</strong> and <strong>database/sql</strong> for working with psql data.</li>
+                    <li class='w3-margin'><i class="fa fa-hand-o-right"></i> <strong>net</strong> to parse request for IP address.</li>
+                </ul>
+            </div>
+        </a>
+    </div>
+{{end}}
