@@ -7,6 +7,7 @@ import (
 	"net"
 	"net/http"
 	"os"
+	"time"
 
 	"github.com/gin-gonic/gin"
 	_ "github.com/lib/pq"
@@ -57,8 +58,6 @@ func dbFunc(c *gin.Context) {
 		return
 	}
 
-	c.String(http.StatusOK, fmt.Sprintf("IP is %q", ip))
-
 	// create table if it isn't there already.
 	if _, err := db.Exec("CREATE TABLE IF NOT EXISTS pings (ip text, last_visited timestamp)"); err != nil {
 		c.String(http.StatusInternalServerError, fmt.Sprintf("Error storing your IP: %q", err))
@@ -66,9 +65,31 @@ func dbFunc(c *gin.Context) {
 	}
 
 	// insert IP
-	// if _, err := db.Exec("INSERT INTO pings pings values()"); err != nil {
-	// 	c.String(http.StatusInternalServerError, fmt.Sprintf("Error storing your IP: %q", err))
-	// 	return
-	// }
+	if _, err := db.Exec("INSERT INTO pings values($1, now())", ip); err != nil {
+		c.String(http.StatusInternalServerError, fmt.Sprintf("Error storing your IP: %q", err))
+		return
+	}
+
+	rows, err := db.Query("SELECT ip,last_visited FROM pings order by last_visited limit 10")
+	if err != nil {
+		c.String(http.StatusInternalServerError,
+			fmt.Sprintf("Error reading pings: %q", err))
+		return
+	}
+
+	defer rows.Close()
+	for rows.Next() {
+		var (
+			lastVisited time.Time
+			ipAddr      string
+		)
+
+		if err := rows.Scan(&ipAddr, &lastVisited); err != nil {
+			c.String(http.StatusInternalServerError,
+				fmt.Sprintf("Error scanning pings: %q", err))
+			return
+		}
+		c.String(http.StatusOK, fmt.Sprintf("lastVisited: %s from IP: %s\n", lastVisited.String(), ipAddr))
+	}
 
 }
