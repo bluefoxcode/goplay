@@ -1,0 +1,11 @@
+{
+  "name": "goplay with bluefoxcode",
+  "description": "demo go applications from bluefoxcode",
+  "keywords": [
+    "go",
+    "sample",
+    "example"
+  ],
+  "image": "heroku/go:1.7.3",
+  "mount_dir": "src/github.com/bluefoxcode/goplay"
+}
