@@ -4,3 +4,9 @@
 
 .top-logo{margin:4px 0 6px 0}
 .top-logo img{height:50px;}
+
+a {text-decoration:none;}
+
+.features {
+    list-style:none;
+}
