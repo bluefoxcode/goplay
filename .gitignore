@@ -32,3 +32,6 @@ _testmain.go
 # external packages folder
 vendor/*
 !vendor/vendor.json
+/node_modules/
+.DS_Store
+thumbs.db
