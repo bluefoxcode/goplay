@@ -1,0 +1,18 @@
+{
+  "name": "goplay",
+  "version": "1.0.0",
+  "description": "go module demos",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bluefoxcode/goplay.git"
+  },
+  "author": "Aaron Thomas <aaron@pop42.com> (http://bluefoxcode.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bluefoxcode/goplay/issues"
+  },
+  "homepage": "https://github.com/bluefoxcode/goplay#readme",
+  "devDependencies": {
+    "gulp": "3.9.1"
+  }
+}
