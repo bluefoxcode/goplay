@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+    <title>goplay - bluefoxcode</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/css/font-awesome.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/static/css/w3.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/main.css" />
+</head>
+<body>
+    <div class="w3-top">
+        <div class="w3-row w3-teal w3-padding">
+            <div class="w3-half top-logo w3-hide-small" >
+                <a href='/'><img src='/static/img/bfc-logo-b.png' alt='goplay.bluefoxcode.com'></a>
+            </div>
+            <div class="w3-half w3-margin-top w3-wide">
+                <div class="w3-right">GOPLAY with BlueFoxCode</div>
+            </div>
+        </div>
+        <ul class="w3-navbar w3-large" style="z-index:4;">
+            <li class="w3-opennav w3-left w3-hide-large">
+                <a class="w3-hover-white w3-large w3-padding-16" href="javascript:void(0)" onclick="w3_open()">☰</a>
+            </li>
+        </ul>
+    </div>
+    <!-- Sidenav -->
+    <nav class="w3-sidenav w3-collapse w3-white w3-animate-left" style="z-index:3;width:270px" id="mySidenav">
+        <div class="w3-clear"></div>
+        <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hide-large" title="close menu">×</a>
+        <div id="menuTut" class="myMenu">
+            <div class="w3-container w3-padding-top">
+                <h3>Demos</h3>
+            </div>
+            <a href="/">Main App</a>
+            <a href="/pings">Pings</a>
+
+        </div>
+    </nav>
+
+    <!-- Overlay effect when opening sidenav on small screens -->
+    <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay">
+    </div>
+    {{yield}}
+
+
+
+    <footer class="w3-container w3-section w3-padding-32 w3-card-4 w3-light-grey w3-center w3-opacity">
+        <p>
+            <nav>
+                <a href="https://github.com/bluefoxcode/goplay" target="_blank">Find on github</a>
+            </nav>
+        </p>
+        <p><i class="fa fa-copyright"></i> Copyright 2016-2017, BlueFoxCode</p>
+    </footer>
+    <script>
+
+        function w3_open() {
+            document.getElementById("mySidenav").style.display = "block";
+            document.getElementById("myOverlay").style.display = "block";
+        }
+
+        function w3_close() {
+            document.getElementById("mySidenav").style.display = "none";
+            document.getElementById("myOverlay").style.display = "none";
+        }
+
+        // Script to open and close the sidenav
+        function w3_show_nav(name) {
+            document.getElementById("menuTut").style.display = "none";
+            document.getElementById("menuRef").style.display = "none";
+            document.getElementById(name).style.display = "block";
+            w3-open();
+        }
+    </script>
+</body>
+</html>

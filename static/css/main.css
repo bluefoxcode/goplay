@@ -1,0 +1,20 @@
+html, body, h1, h2, h3, h4, h5, .w3-wide {
+    font-family: 'Nunito', sans-serif;
+}
+
+.w3-theme {color:#fff !important;background-color:#4CAF50 !important}
+.w3-btn {background-color:#4CAF50;margin-bottom:4px}
+.myMenu {margin-bottom:150px}
+
+.top-logo{margin:4px 0 6px 0}
+.top-logo img{height:50px;}
+
+a {text-decoration:none;}
+
+.features {
+    list-style:none;
+}
+.w3-main{
+    margin-left:270px;margin-top:117px;
+}
+.features .w3-margin { margin:8px 0;}
