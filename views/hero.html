@@ -1,0 +1,28 @@
+<div class="w3-main w3-container">
+
+    {{template "modules/hero.tmpl.html"}}
+    <div class="w3-container">
+        <p>This is a very simple to use REST style API built in go with postgresql db. It displays a good use of mux, unrolled/render, JSON manipulation, good separation of responsibilites and code organization.</p>
+    </div>
+
+    <div class="w3-container">
+        <h3>List Heroes</h3>
+        <p>
+            <div class="w3-code">
+                curl http://goplay-api.bluefoxcode.com/hero
+            </div>
+        </p>
+        <h3>Show Hero</h3>
+        <p>
+            <div class="w3-code">
+                curl http://goplay-api.bluefoxcode.com/hero/2
+            </div>
+        </p>
+        <h3>Post Hero</h3>
+        <p>
+            <div class="w3-code">
+                curl -X POST -H "Content-Type: application/json" -H "Cache-Control: no-cache" -d '{ "description":"This hero is so awesome! You can tell by his cape.","name":"Capey McCaperson"}' "http://goplay-api.bluefoxcode.com/hero"
+            </div>
+        </p>
+    </div>
+</div>

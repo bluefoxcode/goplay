@@ -20,6 +20,7 @@ func main() {
 
 	r.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir("./static"))))
 	r.Handle("/", handlers.Index(renderer)).Methods("GET")
+	r.Handle("/hero", handlers.Hero(renderer)).Methods("GET")
 
 	r.NotFoundHandler = http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		renderer.Render(w, http.StatusNotFound, "not_found", map[string]string{
